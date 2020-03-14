@@ -1,12 +1,69 @@
 @import './variables';
 
-
-
-
-p {
-    font-size: 20px;
+* {
+    font-size: $font-size;
 }
 
 body {
-    background: lightsalmon;
+    background: lighten($background,2.5%);
+}
+
+.wrapper {
+    //Positioning
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-shrink: 0;
+    align-items: center;
+
+    //Size & Color
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh auto;
+    border-radius: 5px
+
+}
+
+.resultwrap {
+    //Positioning
+    display: flex;
+    flex-shrink: 0;
+
+    //Size & Color
+    @include NeoMorfi;
+    height: 25vh;
+    width: 60vw;
+    margin: 2.5%;
+}
+
+.result {
+    //Positioning
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    //Size & Color
+    width: 60vw * 0.3;
+    height: 85%;
+    @include NeoMorfi;
+    font-size: $font-size * 2;
+
+    margin: 0 2%;
+}
+
+button {
+    //Size & Color
+    min-height: 10vh;
+    min-width: 25vh;
+
+    //Customizing Neomorphism
+    @include NeoMorfi;
+    border:none;
+    outline: none;
+
+    &:hover {
+        cursor:pointer;
+    }
 }
