@@ -24,27 +24,28 @@ document.addEventListener("DOMContentLoaded", function() {
 let ButtonConnection = document.querySelector(".serverReq")
 //Creating/Adding new instance of XHR
 const req = new XMLHttpRequest();
-let url = 'http://localhost:3000';
+let url = 'http://localhost:3000/randomizer';
 
 ButtonConnection.onclick = () => {
     console.log('ya clicked me')
     //Open - type, url/file, Async
     req.open(
         'GET',
+        'jsonp',
         url, 
-        true
+        true,
     )
     
-    req.onload = () => {
+    req.onload = (data) => {
         console.log('is this working')
-        if(this.status != null) {
-            console.log(req.response)
+        if(data) {
+            console.log(data)
         } else {
             console.log('nothing yet')
         }
 
         // Sends requests
-        req.send()
     }
+    req.send()
 }
 

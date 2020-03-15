@@ -2,10 +2,11 @@
 
 * {
     font-size: $font-size;
+    color: $fontDark
 }
 
 body {
-    background: lighten($background,2.5%);
+    background: lighten($background-dark,2.5%);
 }
 
 .wrapper {
@@ -28,11 +29,12 @@ body {
     //Positioning
     display: flex;
     flex-shrink: 0;
+    justify-content: space-evenly;
 
     //Size & Color
-    @include NeoMorfi;
-    height: 25vh;
-    width: 60vw;
+    @include NeoMorfiDark;
+    height: 40vh;
+    width: 70vw;
     margin: 2.5%;
 }
 
@@ -46,8 +48,8 @@ body {
 
     //Size & Color
     width: 60vw * 0.3;
-    height: 85%;
-    @include NeoMorfi;
+    height: 70%;
+    @include NeoMorfiDark;
     font-size: $font-size * 2;
 
     margin: 0 2%;
@@ -55,11 +57,11 @@ body {
 
 button {
     //Size & Color
-    min-height: 10vh;
-    min-width: 25vh;
+    min-height: 15vh;
+    min-width: 30vh;
 
     //Customizing Neomorphism
-    @include NeoMorfi;
+    @include NeoMorfiDark;
     border:none;
     outline: none;
 

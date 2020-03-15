@@ -1,9 +1,10 @@
 * {
   font-size: 20px;
+  color: white;
 }
 
 body {
-  background: #e8ecf1;
+  background: #293b49;
 }
 
 .wrapper {
@@ -33,12 +34,15 @@ body {
   display: flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-          box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
+          box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
   border-radius: 0px 12px 0px 12px;
-  background: #E0E5EC;
-  height: 25vh;
-  width: 60vw;
+  background: #243441;
+  height: 40vh;
+  width: 70vw;
   margin: 2.5%;
 }
 
@@ -59,22 +63,22 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 18vw;
-  height: 85%;
-  -webkit-box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-          box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  height: 70%;
+  -webkit-box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
+          box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
   border-radius: 0px 12px 0px 12px;
-  background: #E0E5EC;
+  background: #243441;
   font-size: 40px;
   margin: 0 2%;
 }
 
 button {
-  min-height: 10vh;
-  min-width: 25vh;
-  -webkit-box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-          box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  min-height: 15vh;
+  min-width: 30vh;
+  -webkit-box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
+          box-shadow: -9px -9px 16px rgba(216, 216, 216, 0.055), 9px 9px 16px rgba(0, 0, 0, 0.384);
   border-radius: 0px 12px 0px 12px;
-  background: #E0E5EC;
+  background: #243441;
   border: none;
   outline: none;
 }
