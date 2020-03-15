@@ -28,6 +28,7 @@ let url = 'http://localhost:3000/randomizer';
 
 ButtonConnection.onclick = () => {
     console.log('ya clicked me')
+
     //Open - type, url/file, Async
     req.open(
         'GET',
