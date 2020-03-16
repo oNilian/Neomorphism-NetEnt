@@ -17,7 +17,6 @@ let myPromise = new Promise((resolve,reject) => {
             try {
                 let resp = await fetch(url)
                 const data = await resp.text()
-
                 console.log(data)
 
                 if(data.length < 10) {
@@ -28,26 +27,23 @@ let myPromise = new Promise((resolve,reject) => {
                         `
                     /// First comparison is to check if all 3 are the same, then we check if 2 of the windows are the same
                     if(data[0] === data[2] && data[2] === data[4]){
-                        resultMessage.innerHTML = `<div>Big Win</div>`
-                        
+                        resultMessage.innerHTML = `<div>Big Win</div>` 
                     } else if (
                         data[2] === data[4] || 
                         data[2] === data[0] || 
                         data[0] === data[4]
                     ){
                         resultMessage.innerHTML = `<div>Small Win</div>`
-                        
-                    }
-
-                    
                     } else {
                         resultMessage.innerHTML = `<div>No Win</div>`
-                        result.innerHTML = `
-                        <div class="result">${data[23]}</div>
-                        <div class="result">${data[25]}</div>
-                        <div class="result">${data[27]}</div>
-                        `
-                        alert('You won a extra spinn')  
+                    }
+                } else {
+                    result.innerHTML = `
+                    <div class="result">${data[23]}</div>
+                    <div class="result">${data[25]}</div>
+                    <div class="result">${data[27]}</div>
+                    `
+                    alert('You won a extra spinn')  
                 }
 
             } catch (err) {
