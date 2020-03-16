@@ -1,7 +1,8 @@
-const express = require('express');
-const app = express();
-const http = require('http');
+// const express = require('express');
+// const app = express();
+const app = require('http');
 const fs = require('fs');
+
 
 const randomOutcome = () => {
 
@@ -23,7 +24,7 @@ const randomOutcome = () => {
         
         console.log(y)
     }
-    
+
     //Om din dolda roll är över 950 av 1000 så får du en extra spin
     //Om din dolda roll är under 950 eller under så fortsätter allt som vanligt
     if (bonus > 950) {
@@ -34,12 +35,34 @@ const randomOutcome = () => {
     }
 }  
 
-//Endpoint för all data för att senare kunna presentera i client-side
-app.get('/randomizer', async (req, res) => {
- res.json(randomOutcome())
-}) 
+//middleware
+app.createServer((req, res) => {
+    
+    // app.use((request, response,  next) => {
+        // 	console.log('Logger:', request.url, request.method);
+        //     response.header("Access-Control-Allow-Origin", "*")
+        // 	next();
+        // })
+        
+    let url = req.url
 
-app.listen(3000)
+    if(url ==='/randomizer'){
+        res.write(`${randomOutcome()}`); //write a response
+        res.end(); //end the response
+    }else{
+        res.write('<h1>Hello World!<h1>'); //write a response
+        res.end(); //end the response
+    }
+    }).listen(3000, function(){
+        console.log("server start at port 3000"); //the server object listens on port 3000
+    });
+
+//Endpoint för all data för att senare kunna presentera i client-side
+// app.get('/randomizer', (req, res) => {
+//  res.json(randomOutcome())
+// }) 
+
+// app.listen(3000)
 
 
 

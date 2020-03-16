@@ -22,31 +22,29 @@ document.addEventListener("DOMContentLoaded", function() {
 // perform a new request without any user input
 
 let ButtonConnection = document.querySelector(".serverReq")
-//Creating/Adding new instance of XHR
-const req = new XMLHttpRequest();
 let url = 'http://localhost:3000/randomizer';
 
-ButtonConnection.onclick = () => {
+ButtonConnection.onclick = async () => {
     console.log('ya clicked me')
 
-    //Open - type, url/file, Async
-    req.open(
-        'GET',
-        'jsonp',
-        url, 
-        true,
-    )
-    
-    req.onload = (data) => {
-        console.log('is this working')
-        if(data) {
-            console.log(data)
-        } else {
-            console.log('nothing yet')
-        }
+    let answer =  await fetch(url)
+    let myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Completed"), 1000)
+    });
+    let data =  await myPromise
 
-        // Sends requests
-    }
-    req.send()
+    answer
+    console.log(data)
+    
 }
 
+// ait fetch(url)
+//     .then(response => {
+//         let data = await response.json();
+//         console.log('Fetch successful', data)
+//             // TODO: återkoppla för användaren - säg att ordet har lagts till
+//         })
+        
+// 		.catch(error => {
+// 			console.log('Fetch failed.', error)
+//         })
