@@ -1,15 +1,14 @@
 // const express = require('express');
 // const app = express();
 const app = require('http');
-const fs = require('fs');
-
+const port = 3000;
 
 const randomOutcome = () => {
 
     //rensa alla värdern för varje spin
-    let x = null;
-    let y = [];
-    let bonus = null;
+    x = null;
+    y = [];
+    bonus = null;
 
     //Bonus-Jackpot, 1000 möjligheter
     bonus = Math.floor(Math.random() * 1000 );
@@ -38,32 +37,23 @@ const randomOutcome = () => {
 //middleware
 app.createServer((req, res) => {
     
-    // app.use((request, response,  next) => {
-        // 	console.log('Logger:', request.url, request.method);
-        //     response.header("Access-Control-Allow-Origin", "*")
-        // 	next();
-        // })
-        
-    let url = req.url
+    let url = "http://localhost:3000/randomizer";
+    url = req.url
 
-    if(url ==='/randomizer'){
-        res.write(`${randomOutcome()}`); //write a response
-        res.end(); //end the response
-    }else{
-        res.write('<h1>Hello World!<h1>'); //write a response
-        res.end(); //end the response
-    }
-    }).listen(3000, function(){
-        console.log("server start at port 3000"); //the server object listens on port 3000
-    });
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+        /** add other headers as per requirement */
+      };
+    
+      if (url) {
+        res.writeHead(200,headers)
+        res.write(`${randomOutcome()}`)
+        res.end()
+      }
 
-//Endpoint för all data för att senare kunna presentera i client-side
-// app.get('/randomizer', (req, res) => {
-//  res.json(randomOutcome())
-// }) 
-
-// app.listen(3000)
-
+      // 
+    }).listen(port);
 
 
 // The server should have the following feature:

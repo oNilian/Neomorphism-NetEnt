@@ -17,8 +17,15 @@
     background: #243441
 }
 
+@mixin center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 $background-dark: #243441;
 $background: #E0E5EC;
 $font-size: 20px;
-$fontDark: white;
-$fontLight: black;
+$fontDark: black;
+$fontLight: white;
