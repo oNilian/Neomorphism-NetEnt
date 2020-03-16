@@ -5,9 +5,6 @@ const port = 3000;
 
 const randomOutcome = () => {
 
-    randPic = [
-        {First: '1', }
-]
     //rensa alla värdern för varje spin
     x = null;
     y = [];

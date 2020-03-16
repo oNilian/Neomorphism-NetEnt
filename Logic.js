@@ -17,6 +17,7 @@ let myPromise = new Promise((resolve,reject) => {
             try {
                 let resp = await fetch(url)
                 const data = await resp.text()
+
                 console.log(data)
 
                 if(data.length < 10) {
@@ -44,6 +45,7 @@ let myPromise = new Promise((resolve,reject) => {
                     <div class="result">${data[27]}</div>
                     `
                     alert('You won a extra spinn')  
+                    apiGetAll()
                 }
 
             } catch (err) {
