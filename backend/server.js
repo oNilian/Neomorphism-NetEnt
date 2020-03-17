@@ -27,8 +27,10 @@ const randomOutcome = () => {
     //Om din dolda roll är över 950 av 1000 så får du en extra spin
     //Om din dolda roll är under 950 eller under så fortsätter allt som vanligt
     if (bonus > 950) {
-        console.log('o my lord you won a hidden bonus!',bonus)
-        return `You hit a hidden bonus ${y}`
+        console.log(bonus)
+        return `You have won a free spin ${bonus}
+        ${y}
+        `
     } else {
         return y
     }
